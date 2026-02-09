@@ -125,8 +125,8 @@ function createEditNewPointTemplate(point, offers, destinations, createMode) {
                     <input class="event__input  event__input--price" id="event-price-1" type="number" required min="1" max="100000" step="1" name="event-price" value="${basePrice}">
                   </div>
 
-                  <button class="event__save-btn  btn  btn--blue" type="submit" ${(isSubmitDisabled || isDisabled) ? 'disabled' : ''} >${isSaving ? 'saving...' : 'save'}</button>
-                  <button class="event__reset-btn" type="reset">${(createMode ? 'Cancel' : null) || (isDeleting ? 'deleting...' : 'delete')}</button>
+                  <button class="event__save-btn  btn  btn--blue" type="submit" ${(isSubmitDisabled || isDisabled) ? 'disabled' : ''} >${isSaving ? 'Saving...' : 'Save'}</button>
+                  <button class="event__reset-btn" type="reset">${(createMode ? 'Cancel' : null) || (isDeleting ? 'Deleting...' : 'Delete')}</button>
                   ${!createMode ? `<button class="event__rollup-btn" type="button">
                     <span class="visually-hidden">Open event</span>
                   </button>` : ''}

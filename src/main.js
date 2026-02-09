@@ -56,5 +56,8 @@ eventsPresenter.init();
 eventsModel.init()
   .finally(() => {
     render(newPointButtonComponent, siteHeaderElement);
+    if(document.querySelector('.trip-events__msg')) {
+      document.querySelector('.trip-main__event-add-btn').disabled = true;
+    }
   });
 

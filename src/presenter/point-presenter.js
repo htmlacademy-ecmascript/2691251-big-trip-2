@@ -1,6 +1,6 @@
 import { render, replace, remove } from '../framework/render.js';
 import PointView from '../view/point-view.js';
-import PointEditView from '../view/edit-point-view.js';
+import PointEditView from '../view/point-edit-view.js';
 import { UserAction, UpdateType } from '../const.js';
 
 const Mode = {
@@ -131,6 +131,9 @@ export default class PointPresenter {
 
   #escKeyDownHandler = (evt) => {
     if (evt.key === 'Escape') {
+      if (document.querySelector('.shake')) {
+        return;
+      }
       evt.preventDefault();
       this.#pointEditComponent.reset(this.#point);
       this.#replaceFormToCard();

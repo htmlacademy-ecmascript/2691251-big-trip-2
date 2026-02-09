@@ -34,6 +34,7 @@ export default class EventsModel extends Observable {
       this._notify(UpdateType.FAILURE);
       return;
     }
+
     try {
       const offers = await this.#pointsApiService.offers;
       this.#offers = offers;
@@ -42,6 +43,7 @@ export default class EventsModel extends Observable {
       this._notify(UpdateType.FAILURE);
       return;
     }
+
     try {
       const destinations = await this.#pointsApiService.destinations;
       this.#destinations = destinations;
@@ -116,7 +118,6 @@ export default class EventsModel extends Observable {
       basePrice: point['base_price'],
     };
 
-    // Ненужные ключи мы удаляем
     delete adaptedPoint['date_from'];
     delete adaptedPoint['date_to'];
     delete adaptedPoint['base_price'];

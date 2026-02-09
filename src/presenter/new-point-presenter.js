@@ -1,5 +1,5 @@
 import { remove, render, RenderPosition } from '../framework/render.js';
-import PointEditView from '../view/edit-point-view.js';
+import PointEditView from '../view/point-edit-view.js';
 import { UserAction, UpdateType } from '../const.js';
 
 export default class NewPointPresenter {
@@ -80,6 +80,9 @@ export default class NewPointPresenter {
 
   #escKeyDownHandler = (evt) => {
     if (evt.key === 'Escape' || evt.key === 'Esc') {
+      if (document.querySelector('.shake')) {
+        return;
+      }
       evt.preventDefault();
       this.destroy();
     }
