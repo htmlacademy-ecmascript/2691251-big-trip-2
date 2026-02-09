@@ -9,7 +9,6 @@ function createNewTripInfoTemplate(eventsModel) {
   }
 
   const sortedPoints = eventsModel.points.sort(sortPointDay);
-  const destinationsAmount = eventsModel.destinations.length;
   const getDestinationName = (destination) => eventsModel.destinations.find((x) => x.id === destination)?.name;
 
   const uniqDestinations = [];
@@ -40,7 +39,7 @@ function createNewTripInfoTemplate(eventsModel) {
 
   return `  <section class="trip-main__trip-info  trip-info">
             <div class="trip-info__main">
-              <h1 class="trip-info__title">${destinationsAmount ? firstPointName : ''} ${destinationsAmount ? secondPointName : ''} ${destinationsAmount ? dots : ''} ${destinationsAmount ? lastPointName : ''} </h1>
+              <h1 class="trip-info__title">${firstPointName} ${secondPointName} ${dots} ${lastPointName} </h1>
 
               <p class="trip-info__dates">${humanizedStartDate}&nbsp;&mdash;&nbsp;${humanizedEndDate}</p>
             </div>

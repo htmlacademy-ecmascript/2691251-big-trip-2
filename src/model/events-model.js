@@ -14,6 +14,9 @@ export default class EventsModel extends Observable {
   }
 
   get points() {
+    if (this.#destinations.length === 0 || this.#offers === 0) {
+      return [];
+    }
     return this.#points;
   }
 
