@@ -71,12 +71,7 @@ function sortPointPrice(pointB, pointA) {
   return pointA.basePrice - pointB.basePrice;
 }
 
-function isDatesEqual(dateA, dateB) {
-  return (dateA === null && dateB === null) || dayjs(dateA).isSame(dateB, 'D');
-}
-
 export {
-  isDatesEqual,
   sortPointPrice,
   sortPointTime,
   sortPointDay,
